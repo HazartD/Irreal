@@ -1,37 +1,65 @@
-2024-11-17 19:07:08 UTC
+2024-11-18 20:22:29 UTC
 Windows-10-10.0.19041
 Ren'Py 8.2.3.24061702
 
-Early init took 0.72s
-Loading error handling took 1.31s
-Loading script took 6.37s
-Loading save slot metadata took 1.54s
+Early init took 0.32s
+Loading error handling took 1.75s
+Loading script took 6.91s
+Loading save slot metadata took 4.12s
 Loading persistent took 0.00s
-Running init code took 0.74s
-Loading analysis data took 0.18s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 1.94s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\MINEDUCYT\\AppData\\Roaming/RenPy/backups\\Irreal':
-Dump and make backups took 0.89s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
+
+File "game/define_cosas.rpy", line 48: expected 'comma or end of line' not found.
+    offscreen = False
+              ^
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.19s
+Interface start took 4.68s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) HD Graphics Gen11'
+Version: b'4.6.0 - Build 31.0.101.2127'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 83.66s
+Loading error handling took 0.13s
+Loading script took 7.94s
+Loading save slot metadata took 1.63s
+Loading persistent took 0.00s
+ - Init at renpy/common/00updater.rpy:23 took 0.27303 s.
+ - Init at game/gui.rpy:11 took 0.85539 s.
+ - Init at renpy/common/00library.rpy:447 took 0.25997 s.
+Running init code took 1.56s
+Loading analysis data took 0.29s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 1.84s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\MINEDUCYT\\AppData\\Roaming/RenPy/backups\\Irreal':
+Dump and make backups took 2.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.14s
+Init translation took 0.11s
 Build styles took 0.01s
-Load screen analysis took 0.03s
-Analyze screens took 0.06s
-Save screen analysis took 1.27s
-Prepare screens took 0.22s
-Save pyanalysis. took 1.86s
-Save bytecode. took 1.46s
+Load screen analysis took 0.21s
+Analyze screens took 0.26s
+Save screen analysis took 1.50s
+Prepare screens took 0.35s
+Save pyanalysis. took 1.87s
+Save bytecode. took 2.85s
 Running _start took 0.01s
-Interface start took 1.21s
+Interface start took 0.39s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)
@@ -45,55 +73,71 @@ Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Maximum texture size: 4096x4096
 
 Full traceback:
-  File "game/script.rpy", line 28, in script
-    with none
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 1356, in execute
-    trans = renpy.python.py_eval(self.expr)
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 28, in <module>
-    with none
-NameError: name 'none' is not defined
+  File "game/script.rpy", line 31, in script
+    ma "[cps=2]...[/cps]"
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
+    Say.execute(self)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\exports.py", line 1494, in say
+    who(what, *args, **kwargs)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\character.py", line 1379, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\character.py", line 1293, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\character.py", line 1273, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\substitutions.py", line 371, in substitute
+    s = interpolate(s, kwargs) # type: ignore
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (<none>, line 1)
 
 While running game code:
-  File "game/script.rpy", line 28, in script
-    with none
-  File "game/script.rpy", line 28, in <module>
-    with none
-NameError: name 'none' is not defined
+  File "game/script.rpy", line 31, in script
+    ma "[cps=2]...[/cps]"
+SyntaxError: invalid syntax (<none>, line 1)
 Resetting cache.
-Early init took 84.68s
-Loading error handling took 0.21s
-Loading script took 3.47s
-Loading save slot metadata took 2.23s
+Early init took 300.71s
+Loading error handling took 0.78s
+Loading script took 3.10s
+Loading save slot metadata took 2.51s
 Loading persistent took 0.00s
-Running init code took 0.32s
-Loading analysis data took 0.07s
+Running init code took 0.35s
+Loading analysis data took 0.10s
 Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 2.15s
+Reloading save slot metadata took 1.95s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\MINEDUCYT\\AppData\\Roaming/RenPy/backups\\Irreal':
-Dump and make backups took 2.10s
+Dump and make backups took 2.74s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.18s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
+Creating interface object took 0.01s
 Cleaning stores took 0.00s
 Init translation took 0.15s
 Build styles took 0.01s
-Load screen analysis took 0.14s
-Analyze screens took 0.06s
-Save screen analysis took 1.31s
-Prepare screens took 0.29s
+Load screen analysis took 0.02s
+Analyze screens took 0.05s
+Save screen analysis took 1.91s
+Prepare screens took 0.34s
 Save pyanalysis. took 0.00s
-Save bytecode. took 1.28s
-Running _start took 0.20s
-Interface start took 0.13s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.21s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)
@@ -107,123 +151,75 @@ Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Maximum texture size: 4096x4096
 
 Full traceback:
-  File "game/script.rpy", line 28, in script
-    with none
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 1356, in execute
-    trans = renpy.python.py_eval(self.expr)
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 28, in <module>
-    with none
-NameError: name 'none' is not defined
-
-While running game code:
-  File "game/script.rpy", line 28, in script
-    with none
-  File "game/script.rpy", line 28, in <module>
-    with none
-NameError: name 'none' is not defined
-Resetting cache.
-Early init took 121.79s
-Loading error handling took 0.03s
-Loading script took 1.12s
-Loading save slot metadata took 1.31s
-Loading persistent took 0.00s
-Running init code took 0.10s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 1.17s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\MINEDUCYT\\AppData\\Roaming/RenPy/backups\\Irreal':
-Dump and make backups took 1.30s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.15s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.13s
-Build styles took 0.01s
-Load screen analysis took 0.01s
-Analyze screens took 0.06s
-Save screen analysis took 1.33s
-Prepare screens took 0.35s
-Save pyanalysis. took 0.00s
-Save bytecode. took 2.83s
-Running _start took 0.01s
-Interface start took 0.20s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) HD Graphics Gen11'
-Version: b'4.6.0 - Build 31.0.101.2127'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 41, in script
-    show mc_normal at move_left_to_right(0.1,0.4)
+  File "game/script.rpy", line 83, in script
+    show mc_normal at wakeup
   File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 1113, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 1072, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 1072, in <listcomp>
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\ast.py", line 1076, in show_imspec
+    renpy.config.show(name,
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\exports.py", line 765, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\display\scenelists.py", line 474, in add
+    thing.visit_all(lambda d : None)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\display\displayable.py", line 421, in visit_all
+    for d in self.visit():
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 764, in visit
+    block = self.compile()
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 671, in compile
+    block = self.atl.compile(self.context)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 873, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 873, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 1179, in compile
+    child = ctx.eval(expr)
+  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 392, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
   File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1209, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "D:\mauri1\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 41, in <module>
-    show mc_normal at move_left_to_right(0.1,0.4)
-  File "D:\mauri1\renpy-8.2.3-sdk\renpy\atl.py", line 601, in __call__
-    raise Exception("Too many arguments passed to ATL transform.")
-Exception: Too many arguments passed to ATL transform.
+  File "game/define_cosas.rpy", line 48, in <module>
+    offscreen# = False
+NameError: name 'offscreen' is not defined
 
-While running game code:
-  File "game/script.rpy", line 41, in script
-    show mc_normal at move_left_to_right(0.1,0.4)
-  File "game/script.rpy", line 41, in <module>
-    show mc_normal at move_left_to_right(0.1,0.4)
-Exception: Too many arguments passed to ATL transform.
+Compiling ATL code at game/define_cosas.rpy:48
+  File "game/script.rpy", line 83, in script
+    show mc_normal at wakeup
+  File "game/define_cosas.rpy", line 48, in <module>
+    offscreen# = False
+NameError: name 'offscreen' is not defined
 Resetting cache.
-Early init took 190.06s
-Loading error handling took 0.03s
-Loading script took 1.13s
-Loading save slot metadata took 1.14s
+Early init took 604.60s
+Loading error handling took 1.13s
+Loading script took 8.04s
+Loading save slot metadata took 3.76s
 Loading persistent took 0.00s
-Running init code took 0.13s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 1.18s
+Running init code took 0.36s
+Loading analysis data took 0.10s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 2.74s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\MINEDUCYT\\AppData\\Roaming/RenPy/backups\\Irreal':
-Dump and make backups took 1.11s
+Dump and make backups took 2.49s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.18s
+Initial gc took 0.20s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
+Creating interface object took 0.02s
 Cleaning stores took 0.00s
-Init translation took 0.13s
+Init translation took 0.16s
 Build styles took 0.01s
-Load screen analysis took 0.01s
+Load screen analysis took 0.39s
 Analyze screens took 0.06s
-Save screen analysis took 1.32s
-Prepare screens took 0.35s
-Save pyanalysis. took 0.00s
-Save bytecode. took 1.87s
+Save screen analysis took 1.46s
+Prepare screens took 0.29s
+Save pyanalysis. took 1.61s
+Save bytecode. took 2.03s
 Running _start took 0.00s
-Interface start took 0.13s
+Interface start took 0.67s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)

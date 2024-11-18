@@ -27,7 +27,16 @@ label day1:
         "Primero ir a comer":
             jump cocina
         "Primero revisar el PC e investigar":
-            ""
+            jump pc1
+
+
+    mcp "Oh, espera. \nMi streamer favorito esta transmitiendo."
+    mcp "¡Tengo que preguntarle que opina sobre la polémica de hace 2 horas sobre otros streamers que de seguro ni conoce!"
+
+    ##pantalla hace fade-in y fade-out
+
+    mcp "Y así pase 4 horas de mi vida. Viendo a cuatro comediantes jugar a ser goblinas que limpian una mazmorra."
+
     mc "sdxfcgvhbjnlkm"
     mc "sdfcgvhbjn"
     mc "cv bnmhjb"
@@ -39,6 +48,7 @@ label day1:
 
 label cocina:
     $pr+=1
+    $pr1_cocina = True
     scene pasillo_1
     show mc_normal at move_left_to_right
     #play sound caminar
@@ -91,6 +101,9 @@ label cocina:
     he "Mandy en secreto siempre fue un alien que quería extinguir la humanidad. \n¡Y ahora te contagiaré la enfermedad letal que diseño para ello: {w}las cosquillas!"
 
     "[he], riendo, empezó a corretear a [pa] por la sala, la cual huía con visible preocupación"
+    hide he_normal
+    hide pa_normal
+    show he_chase_pa at loop_h
     ##deberia haber modo de hacer un bucle en que se esten moviendo y desapareciendo para aparecer del otro lado
     pa "¡Ñoooooooooooooooooo!"
 
@@ -107,8 +120,11 @@ label cocina:
     mcp "{fast}¡Mierda si me van a chocar!"
 
     ##el bucle se para, pa] esta un poco mas arriba, estan los 2 frente a mc]
-    "Pero su hermano le salva de una contusión, causada por su propia mal condición física."
 
+    "Pero su hermano le salva de una contusión, causada por su propia mal condición física."
+    hide he_chase_pa
+    show he_normal at left
+    show pa_normal at custom_x(0.1),custom_y(0.6)
     he "Espérate, mija."
     he "Ahí ibas a chocar con [mc], a los anémicos les tardan mucho en curar las heridas. \nJajaja"
 
@@ -137,26 +153,18 @@ label cocina:
     mcp "Ahora que lo pienso..., se ve muy entretenido jugar así."
     mcp "..."
     mcp "Iré yendo a mi cuarto."
+    scene pasillo_2
+    show mc_normal at move_right_to_left
+    pause
+    scene pasillo_1
+    show mc_normal at move_right_to_left
+    pause
+    scene cuarto
+    show mc_normal at left
 
-    mcpn "Recuerdo jugar con [he] cuando éramos niños, corriendo y haciendo ruido por la casa."
-    mcpn "Ahora que lo pienso, ¿Cuándo deje de ser así?"
-    nvl clear
-    "[mc] echa la soda en su sopa y continua su epifanía."
-    mcpn "Digo, [he] sigue igual. Sale con sus amigos, anda en fiestas, bailando y riendo."
-    mcpn "Además tiene a [ma]. Nos conocemos los tres desde niños y ellos llevan buen tiempo saliendo, a lo mejor no tardan mucho en casarse cuando cumplan 18 el próximo año."
-    mcpn "Incluso se lleva bien con [pa]. Él sabía que le gusta de desayuno, a lo mejor le suele cocinar cuando no están nuestros padres."
-    mcpn "¿No se supone que es algo que debería saber? Lo que ocurre en la casa, las tareas de cada uno. Eso lo hablarán todos entre sí."
-    nvl clear
+    jump pr1
 
-    mcpn "...Solo ...Solo yo estoy sola."
-    mcpn "Encerrada en este cuarto. Autocondenada a mi soledad. Miro los personajes de anime de cartón tamaño real y me doy cuenta de ello."
-    nvl clear
-
-    mcp "Oh, espera. \nMi streamer favorito empezó a transmitir mientras estaba en la cocina."
-    mcp "¡Tengo que preguntarle que opina sobre la polémica de hace 20 minutos sobre otros streamers que de seguro ni conoce!"
-    "[mc] toma su maruchan y se sienta frente al vértice de LEDs tricolores."
-    ##pantallada hace fade-in y fade-out
-    mcp "Y así pase 4 horas de mi vida. Viendo a cuatro comediantes jugar a ser goblinas que limpian una mazmorra."
+    "[mc] toma su maruchan, y se sienta frente al vértice de LEDs tricolores."
 
 
 

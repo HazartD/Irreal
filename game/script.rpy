@@ -1,7 +1,4 @@
-﻿
-# El juego comienza aquí.
-
-label start:
+﻿label start:
     ################## Acto 1 (Sueño) ###########################
 
     scene estatica_1 with dissolve ##deberia ser un espacio negro pero con estatica empezando
@@ -31,16 +28,16 @@ label start:
     mcp "¡Menteeee, te equivocaste de archivo! \nBusca en la carpeta de husbandos, no en la de familia, que eso mal visto y además no le voy a la tijera."
     mcp "Bueno, igual el sueño es el subconsciente. Los tiempos y la gente cambian. Probemos."
 
-    ma "..."
+    ma "{cps=2}...{/cps}"
 
     mc "Bueno, cuñada, ¿es esto un manga yuri?, ¿le vas a mi hermano para en realidad pasar tiempo conmigo?"
 
-    ma "..."
+    ma "{cps=2}...{/cps}"
 
     mc "¿Qué pasa, [ma]? ¿Mucho calor? ¿La ropa incómoda?"
-    show mc_normal at move_x(0.1,0.4)
+    show mc_normal at move(0.4,1.0,0.1)
     mc "¿Te ayudo a arreglarlo?"
-    show mc_normal at move_x(0.1,0.7)
+    show mc_normal at move(0.7,1.0,0.1)
     #hacercar personajes
 
     "[mc] acerca su brazo al cuello de [ma]."
@@ -59,7 +56,7 @@ label start:
 
     pa "¡AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!"
     hide pa_normal
-    with dissolve
+    with pixellate#dissolve
 
     mc "¿¡Qué verga!?"
 
@@ -83,7 +80,7 @@ label start:
     ###Suena un pitito.
     scene cuarto_1
     "..."
-    show mc_normal at left,wakeup
+    show mc_normal at offscreenleft,wakeup
 
     mc "¡¡AHHHH!!"
     mc "Ah... ah... ah..."

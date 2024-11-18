@@ -769,9 +769,9 @@ screen preferences():
 
                 vbox:
 
-                    label _("Veloc. texto")
+                    #label _("Veloc. texto")
 
-                    bar value Preference("text speed")
+                    #bar value Preference("text speed")
 
                     label _("Veloc. autoavance")
 
